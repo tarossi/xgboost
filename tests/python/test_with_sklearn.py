@@ -111,7 +111,10 @@ def test_boston_housing_regression():
     tm._skip_if_no_sklearn()
     from sklearn.metrics import mean_squared_error
     from sklearn.datasets import load_boston
-    from sklearn.cross_validation import KFold
+    try:
+        from sklearn.model_selection import KFold
+    except:
+        from sklearn.cross_validation import KFold
 
     boston = load_boston()
     y = boston['target']
@@ -153,7 +156,10 @@ def test_regression_with_custom_objective():
     tm._skip_if_no_sklearn()
     from sklearn.metrics import mean_squared_error
     from sklearn.datasets import load_boston
-    from sklearn.cross_validation import KFold
+    try:
+        from sklearn.model_selection import KFold
+    except:
+        from sklearn.cross_validation import KFold
 
     def objective_ls(y_true, y_pred):
         grad = (y_pred - y_true)
@@ -186,7 +192,10 @@ def test_regression_with_custom_objective():
 def test_classification_with_custom_objective():
     tm._skip_if_no_sklearn()
     from sklearn.datasets import load_digits
-    from sklearn.cross_validation import KFold
+    try:
+        from sklearn.model_selection import KFold
+    except:
+        from sklearn.cross_validation import KFold
 
     def logregobj(y_true, y_pred):
         y_pred = 1.0 / (1.0 + np.exp(-y_pred))
@@ -225,7 +234,10 @@ def test_classification_with_custom_objective():
 def test_sklearn_api():
     tm._skip_if_no_sklearn()
     from sklearn.datasets import load_iris
-    from sklearn.cross_validation import train_test_split
+    try:
+        from sklearn.model_selection import train_test_split
+    except:
+        from sklearn.cross_validation import train_test_split
 
     iris = load_iris()
     tr_d, te_d, tr_l, te_l = train_test_split(iris.data, iris.target, train_size=120)
@@ -242,7 +254,10 @@ def test_sklearn_api():
 def test_sklearn_api_gblinear():
     tm._skip_if_no_sklearn()
     from sklearn.datasets import load_iris
-    from sklearn.cross_validation import train_test_split
+    try:
+        from sklearn.model_selection import train_test_split
+    except:
+        from sklearn.cross_validation import train_test_split
 
     iris = load_iris()
     tr_d, te_d, tr_l, te_l = train_test_split(iris.data, iris.target, train_size=120)
