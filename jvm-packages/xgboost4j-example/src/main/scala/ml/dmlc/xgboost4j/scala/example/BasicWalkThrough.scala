@@ -28,7 +28,7 @@ import ml.dmlc.xgboost4j.scala.{XGBoost, DMatrix}
 object BasicWalkThrough {
   def saveDumpModel(modelPath: String, modelInfos: Array[String]): Unit = {
     val writer = new PrintWriter(modelPath, "UTF-8")
-    for (i <- 0 until modelInfos.length) {
+    for (i <- modelInfos.indices) {
       writer.print(s"booster[$i]:\n")
       writer.print(modelInfos(i))
     }
@@ -61,7 +61,7 @@ object BasicWalkThrough {
     }
     booster.saveModel(file.getAbsolutePath + "/xgb.model")
     // dump model with feature map
-    val modelInfos = booster.getModelDump(file.getAbsolutePath + "/featmap.txt", false)
+    val modelInfos = booster.getModelDump("../../demo/data/featmap.txt", false)
     saveDumpModel(file.getAbsolutePath + "/dump.raw.txt", modelInfos)
     // save dmatrix into binary buffer
     testMax.saveBinary(file.getAbsolutePath + "/dtest.buffer")

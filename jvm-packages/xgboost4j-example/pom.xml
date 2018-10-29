@@ -6,10 +6,10 @@
     <parent>
         <groupId>ml.dmlc</groupId>
         <artifactId>xgboost-jvm</artifactId>
-        <version>0.80</version>
+        <version>0.80b</version>
     </parent>
     <artifactId>xgboost4j-example</artifactId>
-    <version>0.80</version>
+    <version>0.80b</version>
     <packaging>jar</packaging>
     <build>
         <plugins>
@@ -25,20 +25,25 @@
     <dependencies>
         <dependency>
             <groupId>ml.dmlc</groupId>
-            <artifactId>xgboost4j-spark</artifactId>
-            <version>0.80</version>
+            <artifactId>xgboost4j</artifactId>
+            <version>0.80b</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-mllib_${scala.binary.version}</artifactId>
-            <version>${spark.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>ml.dmlc</groupId>
-            <artifactId>xgboost4j-flink</artifactId>
-            <version>0.80</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>ml.dmlc</groupId>-->
+            <!--<artifactId>xgboost4j-spark</artifactId>-->
+            <!--<version>0.80</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.spark</groupId>-->
+            <!--<artifactId>spark-mllib_${scala.binary.version}</artifactId>-->
+            <!--<version>${spark.version}</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>ml.dmlc</groupId>-->
+            <!--<artifactId>xgboost4j-flink</artifactId>-->
+            <!--<version>0.80</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
