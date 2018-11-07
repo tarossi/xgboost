@@ -6,7 +6,7 @@
 
     <groupId>ml.dmlc</groupId>
     <artifactId>xgboost-jvm</artifactId>
-    <version>0.81</version>
+    <version>0.81-pfm</version>
     <packaging>pom</packaging>
     <name>XGBoost JVM Package</name>
     <description>JVM Package for XGBoost</description>
@@ -31,12 +31,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <flink.version>1.5.0</flink.version>
         <spark.version>2.3.1</spark.version>
-        <scala.version>2.11.12</scala.version>
-        <scala.binary.version>2.11</scala.binary.version>
+        <scala.version>2.12.7</scala.version>
+        <scala.binary.version>2.12</scala.binary.version>
     </properties>
     <repositories>
         <repository>
@@ -48,8 +48,6 @@
     <modules>
         <module>xgboost4j</module>
         <module>xgboost4j-example</module>
-        <module>xgboost4j-spark</module>
-        <module>xgboost4j-flink</module>
     </modules>
     <profiles>
         <profile>
